@@ -1,0 +1,47 @@
+<div align="center">
+	<div class="card mb-6" style="max-width: 500px;">
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<div style="height: 150px; width: 150px; overflow: hidden;">
+					<img src="{{ runningbacks!.team }}" class="card-img" alt="{{ runningbacks!.name }}" width="150px" height="150px">
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title">{{ runningbacks!.name }}</h5>
+					<p class="card-text">{{ runningbacks!.rank }} Rank</p>
+					<p class="card-text"><small class="text-muted">{{ runningbacks!.points }} Total Points</small></p>
+					<table>
+						<tr>
+							<td width="50px" align="center"><a href="#"
+								data-toggle="collapse" data-target="#collapseTracks"
+								aria-expanded="false" aria-controls="collapseTracks"><i
+									class="fa fa-list"></i></a></td>
+							<td width="50px" align="center"><button class="btn btn-outline-dark" (click)="onEditRunningBack(runningbacks!)"
+								[routerLink]="['/edit', runningbacks!.rbId]"><i
+									></i>Edit
+
+										
+
+								</button></td>
+							<td width="50px" align="center"><a
+								[routerLink]="['/delete', runningbacks!.rbId]"><i
+									class="fa fa-trash"></i></a></td>
+						</tr>
+						<button class="btn btn-outline-dark" type="submit" (click)="onSubmit()">Delete<i
+							class="fa fa-trash"></i></button>
+						<button class="btn btn-outline-dark align-center" backButton>BACK</button>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div  *ngIf="wasSubmitted">
+	{{runningbacks!.name}} was Deleted Successfully
+</div>
+<div *ngIf="wasSubmitted">
+	<button class="btn btn-outline-dark" routerLink="/list-players">Running Back List
+	</button>
+</div>
+<app-edit-player *ngIf="editRunningBack" [runningback]="editRunningBack"></app-edit-player>

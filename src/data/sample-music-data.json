@@ -1,0 +1,29 @@
+[
+  {
+      "rbId": 1,
+      "rank": "1",
+      "name": "Christian McCaffrey",
+      "team": "CAR",
+      "byeWeek": "7",
+      "points": "142.2",
+      "rushAttempts": "80",
+      "rushYards": "459",
+      "rushTds": "6",
+      "recs": "18",
+      "recYards": "141",
+      "recTds": "1",
+      "fum": "0",
+      "fumLost": "0",
+      "firstDowns": "27",
+      "hundredGame": "3",
+      "twoHundredGame": "0",
+      "fourtyPlay": "2",
+      "fourtyTd": "1",
+      "passComp": "0",
+      "passYards": "0",
+      "passTds": "0",
+      "targetShare": "24.21",
+      "pointsGame": "35.55"
+  
+  }
+]

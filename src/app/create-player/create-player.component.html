@@ -1,0 +1,104 @@
+<div align="center" class="container padding" *ngIf="!wasSubmitted">
+    <p>{{ runningback!.name }}</p>
+
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+        <div class="form-group">
+            <label for="rank">Players' Rank</label>
+            <input id="rank" type="text" class="form-control" aria-describedby="helpRank" placeholder="Enter the rank of the Running back" required [(ngModel)]="runningback!.rank" name="rank">
+          </div>
+        <div class="form-group">
+            <label for="name">Players' Name</label>
+            <input id="name" type="text" class="form-control" aria-describedby="helpName" placeholder="Enter the name of the Running Back" required [(ngModel)]="runningback!.name" name="artist">
+          </div>
+        <div class="form-group">
+          <label for="team">Players' Team</label>
+          <input id="team" type="text" class="form-control" aria-describedby="helpTeam" placeholder="Enter the Team of the Running Back" required [(ngModel)]="runningback!.team" name="team">
+        </div>
+        <div class="form-group">
+            <label for="byeWeek">Players' Bye Week</label>
+            <input id="byeWeek" type="text" class="form-control" aria-describedby="helpByeWeek" placeholder="Enter the Bye Week of the Running Back" required [(ngModel)]="runningback!.byeWeek" name="byeWeek">
+          </div>
+        <div class="form-group">
+            <label for="points">Total Points</label>
+            <input id="points" rows="3" class="form-control" aria-describedby="helpPoints" placeholder="Enter the Total Points of the Running Back" required [(ngModel)]="runningback!.points" name="points">
+         </div>
+        <div class="form-group">
+            <label for="rushAttempts">Total Rush Attempts</label>
+            <input id="rushAttempts" type="text" class="form-control" aria-describedby="helpRushAttempts" placeholder="Enter the Total Rush Attempts for the Running Back" required [(ngModel)]="runningback!.rushAttempts" name="rushAttempts">
+        </div>
+        <div class="form-group">
+            <label for="rushYards">Total Rushing Yards</label>
+            <input id="rushyards" type="text" class="form-control" aria-describedby="helpRushYards" placeholder="Enter the Total Rushing Yards for the Running Back" [(ngModel)]="runningback!.rushYards" name="rushYards">
+        </div>
+        <div class="form-group">
+            <label for="rushTds">Total Rushing Touchdowns</label>
+            <input id="rushTds" rows="3" class="form-control" aria-describedby="helpRushTds" placeholder="Enter the Total Rushing Scores for the Running Back" required [(ngModel)]="runningback!.rushTds" name="rushTds">
+         </div>
+         <div class="form-group">
+            <label for="recs">Total Receptions</label>
+            <input id="recs" rows="3" class="form-control" aria-describedby="helpRecs" placeholder="Enter the Total Number of Receptions for the Running Back" required [(ngModel)]="runningback!.recs" name="recs">
+         </div>
+         <div class="form-group">
+            <label for="recYards">Total Receiving Yards</label>
+            <input id="recYards" rows="3" class="form-control" aria-describedby="helpRecYards" placeholder="Enter the Receiving Yards the Running Back" required [(ngModel)]="runningback!.recYards" name="recYards">
+         </div>
+         <div class="form-group">
+            <label for="recTds">Total Receiving Touchdowns</label>
+            <input id="recTds" rows="3" class="form-control" aria-describedby="helpRecTds" placeholder="Enter the Total Number of Receiving Touchdowns for the Running Back" required [(ngModel)]="runningback!.recTds" name="recTds">
+         </div>
+         <div class="form-group">
+            <label for="fum">Fumbles</label>
+            <input id="fum" rows="3" class="form-control" aria-describedby="helpFum" placeholder="Enter the Number of Fumbles for the Running Back" required [(ngModel)]="runningback!.fum" name="fum">
+         </div>
+         <div class="form-group">
+            <label for="fumLost">Fumbles Lost</label>
+            <input id="fumLost" rows="3" class="form-control" aria-describedby="helpFumLost" placeholder="Enter the Number of Lost Fumbles for the Running Back" required [(ngModel)]="runningback!.fumLost" name="fumLost">
+         </div>
+         <div class="form-group">
+            <label for="firstDowns">First Downs</label>
+            <input id="firstDowns" rows="3" class="form-control" aria-describedby="helpFirstDowns" placeholder="Enter the Total Number of First Downs for the Running Back" required [(ngModel)]="runningback!.firstDowns" name="firstDowns">
+         </div>
+         <div class="form-group">
+            <label for="hundredGame">100-199 Rushing Yard and/or Recieving Yard Games</label>
+            <input id="hundredGame" rows="3" class="form-control" aria-describedby="helpHundredGame" placeholder="Enter the Total Number of 100-199 Rushing and/or Receiving Yard Games for the Running Back" required [(ngModel)]="runningback!.hundredGame" name="hundredGame">
+         </div>
+         <div class="form-group">
+            <label for="twoHundredGame">200+ Rushing Yard and/or Recieving Yard Games</label>
+            <input id="twoHundredGame" rows="3" class="form-control" aria-describedby="helpTwoHundredGam" placeholder="Enter the Total Number of 200+ Rushing and/or Receiving Yard Games for the Running Back" required [(ngModel)]="runningback!.twoHundredGame"name="twoHundredGame">
+         </div>
+         <div class="form-group">
+            <label for="fourtyPlay">40+ Yard Runs and/or 40+ Yard Receptions</label>
+            <input id="fourtyPlay" rows="3" class="form-control" aria-describedby="helpRFourtyPlay" placeholder="Enter the Total Number of 40+ Yard Plays for the Running Back" required [(ngModel)]="runningback!.fourtyPlay" name="fourtyPlay">
+         </div>
+         <div class="form-group">
+            <label for="fourtyTd">40+ Yard Rushing and/or Recieving Touchdowns</label>
+            <input id="recs" rows="3" class="form-control" aria-describedby="helpRecs" placeholder="Enter the Total Number of 40+ Yard Touchdowns for the Running Back" required [(ngModel)]="runningback!.fourtyTd" name="fourtyTd">
+         </div>
+         <div class="form-group">
+            <label for="passComp">Passes Completed</label>
+            <input id="passComp" rows="3" class="form-control" aria-describedby="helpPassComp" placeholder="Enter the Number of Passes Completed by the Running Back" required [(ngModel)]="runningback!.passComp" name="passComp">
+         </div>
+         <div class="form-group">
+            <label for="passYards">Passing Yards</label>
+            <input id="passYards" rows="3" class="form-control" aria-describedby="helpPassYards" placeholder="Enter the Total Number of Passing Yards for the Running Back" required [(ngModel)]="runningback!.passYards" name="passYards">
+         </div>
+         <div class="form-group">
+            <label for="passTds">Passing Touchdowns</label>
+            <input id="passTds" rows="3" class="form-control" aria-describedby="helpPassTds" placeholder="Enter the Total Number of Passing Touchdowns for the Running Back" required [(ngModel)]="runningback!.passTds" name="passTds">
+         </div>
+         <div class="form-group">
+            <label for="targetShare">Target Share</label>
+            <input id="targetShare" rows="3" class="form-control" aria-describedby="helpTargetShare" placeholder="Enter the Target Share for the Running Back" required [(ngModel)]="runningback!.targetShare" name="targetShare">
+         </div>
+         <div class="form-group">
+            <label for="pointsGame">Fantasy Points per Game</label>
+            <input id="pointsGame" rows="3" class="form-control" aria-describedby="helpPointsGame" placeholder="Enter the Points per Game for the Running Back" required [(ngModel)]="runningback!.pointsGame" name="pointsGame">
+         </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+</div>
+    <div  *ngIf="wasSubmitted">
+      Running Back was added successfully.
+    </div>

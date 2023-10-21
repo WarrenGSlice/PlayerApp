@@ -1,0 +1,107 @@
+<div class="list-group" *ngIf="selectedRunningBack == null">
+    <button class="list-group-item" active *ngFor="let runningback of runningback" (click)="onSelectRunningBack(runningback)">
+        <table align="center">
+            <tr>
+                <td width="20%">
+                    <img src="{{ runningback!.team }}" width="50px" height="50px"/>
+                </td>
+                <td>
+                    {{ runningback.rank }} rank {{ runningback.name }}
+                </td>
+                <td>
+                 {{runningback.points}}   Total Points
+                </td>
+                <td>
+                    Bye {{runningback.byeWeek}} 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{runningback.rushAttempts}} Rush Attempts
+                </td>
+                <td>
+                    {{runningback.rushYards}} Rush Yards
+                </td>
+                <td>
+                    {{runningback.rushTds}} Rush TDs
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    {{runningback.recs}} Receptions
+                </td>
+                <td>
+                    {{runningback.recYards}} Rec Yards
+                </td>
+                <td>
+                    {{runningback.recTds}} Rec TDs
+                </td>
+                <td>
+                    {{runningback.pointsGame}} Points/Game
+                </td>
+                <td>
+                    <button class="btn btn-outline-dark" type="submit" (click)="onSubmit()">Delete<i
+                        class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{runningback.fum}} Fumbles
+                </td>
+                <td>
+                    {{runningback.fumLost}} Fum Lost
+                </td>
+                <td>
+                    {{runningback.firstDowns}} First Downs
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <button class="btn btn-outline-dark" type="submit">Edit
+                        <app-edit-player *ngIf="selectedRunningBack" [runningback]="selectedRunningBack"></app-edit-player>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{runningback.hundredGame}} 100-199 Rush Games
+                </td>
+                <td>
+                    {{runningback.twoHundredGame}} 200+ Rush Games
+                </td>
+                <td>
+                    {{runningback.fourtyPlay}} 40+ Yard Plays
+                </td>
+                <td>
+                    {{runningback.fourtyTd}} 40+ Yard TDs
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{runningback.passComp}} Pass Completed
+                </td>
+                <td>
+                    {{runningback.passYards}} Pass Yards
+                </td>
+                <td>
+                    {{runningback.passTds}} Pass TDs
+                </td>
+                <td>
+                    {{runningback.targetShare}} Target Share
+                </td>
+                
+            </tr>
+        </table>
+    </button>
+</div>
+<div  *ngIf="wasSubmitted">
+	{{runningbacks!.name}} was Deleted Successfully
+</div>
+<div *ngIf="wasSubmitted">
+	<button class="btn btn-outline-dark" routerLink="/list-players">Running Back List</button>
+</div>
+<!--<app-edit-player *ngIf="selectedRunningBack" [rbs]="selectedRunningBack"></app-edit-player>-->
+<app-display-player *ngIf="selectedRunningBack" [runningbacks]="selectedRunningBack"></app-display-player>
+<app-delete-player *ngIf="deleteRunningBack" [runningbacks]="deleteRunningBack"></app-delete-player>
